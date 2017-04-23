@@ -9,25 +9,10 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  Button,
   View
 } from 'react-native';
 
 import RNCalendarEvents from 'react-native-calendar-events';
-
-const onButtonPress = () => {
-
-RNCalendarEvents.authorizationStatus()
-  .then(status => {
-    // handle status
-    console.log('success');
-    console.log(status);
-  })
-  .catch(error => {
-   // handle error
-    console.log(error);
-  });
-}
 
 //RNCalendarEvents.findCalendars()
   //.then(calendars => {
@@ -46,14 +31,13 @@ RNCalendarEvents.fetchAllEvents('2017-04-22T19:26:00.000Z', '2017-05-08T19:26:00
     console.log('events');
     for (let i = 0; i < events.length; i++) {
         //if (events[i].location == "GREEN") console.log(events[i]);
-        if (events[i].title.includes("Panasonic") && !events[i].calendar.title.includes("Filtered") && !events[i].calendar.title.includes("Extra")) console.log(events[i]);
+        if (events[i].title.includes("NJIT") && !events[i].calendar.title.includes("Filtered") && !events[i].calendar.title.includes("Extra")) console.log(events[i]);
     }
     console.log(events);
     console.log(events[0]);
   })
   .catch(error => {
    // handle error
-   console.log('error');
    console.log(error);
   });
 
@@ -64,8 +48,6 @@ export default class AwesomeProject extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Button title='foo' onPress={onButtonPress}>
-        </Button>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
         </Text>
